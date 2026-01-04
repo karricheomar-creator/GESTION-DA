@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier une intervention</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-4">
+    <h2 class="mb-4">✏️ Modifier une intervention</h2>
+
+    <form method="post" class="p-4 border rounded bg-white shadow-sm">
+        <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input type="date" name="date" value="{{ row[1] }}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Équipement</label>
+            <input type="text" name="equipement" value="{{ row[2] }}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Panne</label>
+            <input type="text" name="panne" value="{{ row[3] }}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Action</label>
+            <input type="text" name="action" value="{{ row[4] }}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Taux d’avancement (%)</label>
+            <input type="number" name="taux_avancement" value="{{ row[5] }}" class="form-control" min="0" max="100">
+        </div>
+        <button type="submit" class="btn btn-success">💾 Enregistrer</button>
+        <a href="/suivi_interventions" class="btn btn-secondary">⬅️ Retour</a>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

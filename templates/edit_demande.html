@@ -1,0 +1,11 @@
+<h2>Modifier une demande</h2>
+<form method="post">
+    Date: <input type="date" name="date" value="{{ row[1] }}"><br>
+    Affectation: <input type="text" name="affectation" value="{{ row[2] }}"><br>
+    Type Achat: <input type="text" name="type_achat" value="{{ row[3] }}"><br>
+    Référence: <input type="text" name="reference" value="{{ row[4] }}"><br>
+    Quantité: <input type="number" name="quantite" value="{{ row[5] }}"><br>
+    Observation: <input type="text" name="observation" value="{{ row[6] }}"><br>
+    Demande Reçu: <input type="checkbox" name="demande_recu" {% if row[7] %}checked{% endif %}><br>
+    <input type="submit" value="Enregistrer">
+</form>

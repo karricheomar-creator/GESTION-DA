@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Suivi des interventions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-4">
+    <h2 class="mb-3">🛠️ Suivi des interventions</h2>
+    <table class="table table-striped table-bordered shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>N_Inter</th>
+                <th>Date</th>
+                <th>Équipement</th>
+                <th>Panne</th>
+                <th>Action</th>
+                <th>Taux Avancement</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-success" role="progressbar" 
+                             style="width: {{ row[5] }}%;" 
+                             aria-valuenow="{{ row[5] }}" aria-valuemin="0" aria-valuemax="100">
+                            {{ row[5] }}%
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a href="/edit_intervention/{{ row[0] }}" class="btn btn-warning btn-sm">✏️ Modifier</a>
+                    <a href="/delete_intervention/{{ row[0] }}" class="btn btn-danger btn-sm">🗑️ Supprimer</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">➕ Ajouter une intervention</h2>
+    <form action="/add_intervention" method="post" class="p-4 border rounded bg-white shadow-sm">
+        <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input type="date" name="date" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Équipement</label>
+            <input type="text" name="equipement" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Panne</label>
+            <input type="text" name="panne" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Action</label>
+            <input type="text" name="action" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Taux Avancement (%)</label>
+            <input type="number" name="taux_avancement" class="form-control" min="0" max="100">
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

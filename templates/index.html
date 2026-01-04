@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil Gestion DA</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<!-- Barre de navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Gestion DA</a>
+    <div class="navbar-nav">
+      <a class="nav-link" href="/demande">Demande en cours</a>
+      <a class="nav-link" href="/historique_da">Historique DA</a>
+      <a class="nav-link" href="/suivi_interventions">Suivi interventions</a>
+      <a class="nav-link" href="/historique_panne">Historique pannes</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenu principal -->
+<div class="container text-center mt-5">
+    <h1 class="mb-4">Bienvenue Omar 👋</h1>
+    <p class="lead">Choisissez une section pour gérer vos demandes et interventions :</p>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <a href="/demande" class="btn btn-primary w-100 p-3 shadow-sm">📋 Demande en cours</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/historique_da" class="btn btn-success w-100 p-3 shadow-sm">📜 Historique DA</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/suivi_interventions" class="btn btn-warning w-100 p-3 shadow-sm">🛠️ Suivi interventions</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/historique_panne" class="btn btn-danger w-100 p-3 shadow-sm">⚡ Historique pannes</a>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
